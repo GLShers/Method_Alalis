@@ -2,7 +2,6 @@ from database import database
 from models import users, items
 import schemas
 
-
 async def get_user(user_id: int):
     user = dict(await database.fetch_one(users.select().where(users.c.id == user_id)))
     list_item = await database.fetch_all(items.select().where(items.c.owner_id == user["id"]))
