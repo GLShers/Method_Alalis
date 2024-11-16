@@ -37,12 +37,13 @@
 /* Стили для кнопки в левом слайдбаре */
 #sidebarToggleLeft {
     position: fixed;
-    top: 70px; /* Располагаем кнопку ниже навбара */
+    top: 10px; /* Перемещаем кнопку выше */
     left: 20px;
     background: #007bff;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 6px 12px; /* Уменьшаем высоту кнопки */
+    font-size: 14px; /* Уменьшаем размер шрифта */
     cursor: pointer;
     border-radius: 5px;
     z-index: 1060; /* Чтобы кнопка была поверх других элементов */
@@ -52,12 +53,13 @@
 /* Кнопка для правого слайдбара */
 #sidebarToggleRight {
     position: fixed;
-    top: 70px; /* Располагаем кнопку ниже навбара */
+    top: 10px; /* Перемещаем кнопку выше */
     right: 20px;
     background: #28a745; /* Цвет для правой кнопки */
     color: white;
     border: none;
-    padding: 10px;
+    padding: 6px 12px; /* Уменьшаем высоту кнопки */
+    font-size: 14px; /* Уменьшаем размер шрифта */
     cursor: pointer;
     border-radius: 5px;
     z-index: 1060; /* Чтобы кнопка была поверх других элементов */
