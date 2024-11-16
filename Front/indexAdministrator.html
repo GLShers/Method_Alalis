@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!--Навбар-->
+    <!-- Навбар -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
@@ -33,7 +33,6 @@
             </div>
         </div>
     </nav>
-
 
     <!-- Форма с рамкой -->
     <div class="form-container">
@@ -58,7 +57,9 @@
         <!-- Кому ставится задача и заказчик (два блока рядом) -->
         <div class="mb-3 row" style="text-align: left;">
             <div class="col">
-                <label for="userInput" class="form-label"><p>Кому ставится задача:</p></label>
+                <label for="userInput" class="form-label">
+                    <p>Кому ставится задача:</p>
+                </label>
                 <input type="text" class="form-control" id="userInput" placeholder="Введите пользователя"
                     aria-label="Пользователь" list="usersList">
                 <datalist id="usersList">
@@ -71,7 +72,9 @@
             </div>
 
             <div class="col">
-                <label for="clientInput" class="form-label"><p>Заказчик:</p></label>
+                <label for="clientInput" class="form-label">
+                    <p>Заказчик:</p>
+                </label>
                 <input type="text" class="form-control" id="clientInput" placeholder="Введите заказчика"
                     aria-label="Заказчик" list="clientsList">
                 <datalist id="clientsList">
@@ -87,7 +90,9 @@
         <!-- Стек технологий -->
         <!-- Новый блок "Стек технологий" с возможностью выбора нескольких вариантов -->
         <div class="mb-3" style="text-align: left;">
-            <label for="techStackInput" class="form-label"><p>Стек технологий:</p></label>
+            <label for="techStackInput" class="form-label">
+                <p>Стек технологий:</p>
+            </label>
             <input type="text" class="form-control" id="techStackInput" placeholder="Выберите технологии"
                 aria-label="Стек технологий" list="techStackList">
             <datalist id="techStackList">
@@ -110,9 +115,6 @@
             <div style="position: relative;">
                 <textarea class="form-control" rows="4" placeholder="Введите описание задачи"
                     aria-label="Описание задачи" style="resize: none;"></textarea>
-                <button type="button" class="btn"
-                    style="position: absolute; right: 10px; bottom: 10px; background: transparent; border: none; padding: 0;">
-                </button>
             </div>
         </div>
 
@@ -143,17 +145,6 @@
             });
         });
     </script>
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Первый слайдбар (слева) -->
     <div class="sidebar" id="sidebar-left">
@@ -190,6 +181,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Меню 4</a>
             </li>
+            <!-- Новый пункт меню для отображения названия задачи -->
+            <li class="nav-item" id="taskNameItem">
+                <a class="nav-link" href="#">Название задачи: <span id="taskName">Не указано</span></a>
+            </li>
         </ul>
         <!-- Кнопка для открытия слайдбара справа -->
         <button class="sidebar-toggler" id="sidebarToggleRight">☰</button>
@@ -198,39 +193,38 @@
     <!-- Затемняющий фон -->
     <div class="overlay" id="overlay"></div>
 
+    <!-- Скрипт для обработки изменений -->
+    <script>
+        // Получаем элементы
+        const fileNameInput = document.getElementById('fileNameInput');
+        const taskNameSpan = document.getElementById('taskName');
 
+        // Функция для обновления названия задачи в слайдбаре
+        function updateSidebar() {
+            const taskName = fileNameInput.value || "Не указано";  // Если поле пустое, то "Не указано"
+            taskNameSpan.textContent = taskName;
+        }
 
+        // Обработчик события для обновления названия в слайдбаре
+        fileNameInput.addEventListener('input', updateSidebar);
 
+        // Функция для очистки формы
+        function clearForm() {
+            document.getElementById("fileNameInput").value = "";
+            document.getElementById("dateInput").value = "";
+            document.getElementById("timeInput").value = "";
+            document.getElementById("userInput").value = "";
+            document.getElementById("clientInput").value = "";
+            document.getElementById("techStackInput").value = "";
+            document.querySelector("textarea").value = "";
+            updateSidebar();  // Обновляем слайдбар, когда форма очищена
+        }
 
+        // Инициализируем слайдбар при загрузке страницы
+        updateSidebar();
+    </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--Слайдбар-->
+    <!-- Слайдбар -->
     <script>
         // Получаем элементы для левого слайдбара
         const sidebarLeft = document.getElementById('sidebar-left');
