@@ -1,0 +1,98 @@
+/* Стили для левого слайдбара */
+#sidebar-left {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Скрыт по умолчанию */
+    width: 250px;
+    height: 100%;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1050;
+}
+
+#sidebar-left.active {
+    left: 0; /* Сдвигаем в экран */
+}
+
+/* Стили для правого слайдбара */
+#sidebar-right {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Скрыт по умолчанию */
+    width: 250px;
+    height: 100%;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1050;
+}
+
+#sidebar-right.active {
+    right: 0; /* Сдвигаем в экран */
+}
+
+/* Стили для кнопки в левом слайдбаре */
+#sidebarToggleLeft {
+    position: fixed;
+    top: 10px; /* Перемещаем кнопку выше */
+    left: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Уменьшаем высоту кнопки */
+    font-size: 14px; /* Уменьшаем размер шрифта */
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1060; /* Чтобы кнопка была поверх других элементов */
+    transition: all 0.3s ease;
+}
+
+/* Кнопка для правого слайдбара */
+#sidebarToggleRight {
+    position: fixed;
+    top: 10px; /* Перемещаем кнопку выше */
+    right: 20px;
+    background: #28a745; /* Цвет для правой кнопки */
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Уменьшаем высоту кнопки */
+    font-size: 14px; /* Уменьшаем размер шрифта */
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1060; /* Чтобы кнопка была поверх других элементов */
+    transition: all 0.3s ease;
+}
+
+/* Когда левый слайдбар активен, кнопка перемещается внутрь слайдбара в правый верхний угол */
+#sidebar-left.active .sidebar-toggler#sidebarToggleLeft {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Перемещаем кнопку вправо */
+    left: auto; /* Убираем левую позицию */
+    transition: top 0.3s ease, right 0.3s ease;
+}
+
+/* Когда правый слайдбара активен, кнопка перемещается внутрь слайдбара и смещается вправо */
+#sidebar-right.active .sidebar-toggler#sidebarToggleRight {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Перемещаем кнопку в правый верхний угол */
+    left: auto; /* Убираем левую позицию */
+    transition: top 0.3s ease, right 0.3s ease;
+}
+
+/* Стили для затемняющего фона */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040; /* Под слайдбаром, но над контентом */
+    display: none; /* Изначально скрыт */
+    pointer-events: none;
+}

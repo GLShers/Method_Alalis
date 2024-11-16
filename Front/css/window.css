@@ -1,0 +1,152 @@
+/* Основной контейнер для всех окон */
+.main-container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 80px;
+}
+
+/* Стили для каждого окошка */
+.window {
+    width: 30%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.6); /* Прозрачный фон для окошка */
+}
+
+/* Белое окошко с прозрачностью */
+#card-body-first {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(252, 252, 252, 0.2) 0%, rgba(144, 217, 255, 0.4) 100%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+/* Желтое окошко с прозрачностью */
+#card-body-second {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(252, 252, 252, 0.2) 0%, rgba(227, 246, 120, 0.4) 100%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+/* Зеленое окошко с прозрачностью */
+#card-body-third {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(252, 252, 252, 0.2) 0%, rgba(140, 238, 159, 0.4) 100%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+/* Стили для желтого содержимого */
+.card-input-third,
+.card-input-first,
+.card-input-second {
+    background: rgba(252, 238, 238, 0.8); /* Прозрачный желтый фон */
+    width: 100%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: rgba(252, 238, 238, 0.9); /* Прозрачный желтый фон с чуть меньшей прозрачностью */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Стили для задачи внутри желтого блока */
+.zadacha {
+    font-size: 12px;
+    background-color: rgba(255, 239, 184, 0.8); /* Прозрачный бежевый фон */
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Эффект при наведении */
+.zadacha:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Добавляем прозрачность для перетаскиваемых элементов */
+.zadacha.dragging {
+    opacity: 0.5; /* Полупрозрачность во время перетаскивания */
+}
+
+/* Стиль для выделения контейнера при перетаскивании */
+.card-input-first.dragover,
+.card-input-second.dragover,
+.card-input-third.dragover {
+    border: 2px dashed #4e9f3d;
+}
+
+/* Кастомный скроллбар для блоков с контентом */
+.card-input::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.card-input::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.6);
+    border-radius: 10px;
+}
+
+.card-input::-webkit-scrollbar-thumb:hover {
+    background: rgba(85, 85, 85, 0.6);
+}
+
+.card-input::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Стили для изображения внутри .zadacha */
+.zadacha img {
+    width: 20px;
+    align-self: flex-start;
+    margin-top: 0;
+}
+
+/* Стили для блока с информацией .info-for-zadacha */
+.info-for-zadacha {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Стили для контейнера вокруг картинки и текста */
+.info-for-zadacha a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="./css/body.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/slideBar.css">
+    <link rel="stylesheet" href="./css/window.css">
+    <link rel="stylesheet" href="./css/modalWindow.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><!-- RoleRelay --></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Центрируем форму поиска -->
+            <div class="search-container">
+                <form class="d-flex" role="search" id="search-line">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контейнер с окошками -->
+    <div class="main-container">
+        <!-- Первое окно -->
+        <div class="window mx-2">
+
+            <div class="card">
+                <div class="card-body" id="card-body-first">
+                    <h2>Нужно сделать</h2>
+                    <div class="card-input-first">
+                        <!-- Пример задачи -->
+                        <div class="zadacha" draggable="true">
+
+                            <div class="zadacha-task">
+                                <div class="image">
+                                    <img src="./photo/galochka1.png" alt="Галочка">
+                                </div>
+                                <div class="formulirovka">
+                                    <p>Какой-то текст задачи...</p>
+                                    <!-- Всплывающее окно -->
+                                </div>
+                                <div class="info-for-zadacha">
+                                    <a id="level"><img src="./photo/icons8-календарь-100.png" alt="kalendar">
+                                        <p>Сложная задача</p>
+                                    </a>
+                                    <a id="data"><img src="./photo/icons8-календарь-100.png" alt="kalendar">
+                                        <p>25 августа</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Вторая задача -->
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- Второе окно -->
+        <div class="window mx-2">
+
+            <div class="card">
+                <div class="card-body" id="card-body-second">
+                    <h2>Нужно сделать</h2>
+                    <div class="card-input-second">
+                        <div class="zadacha">
+                            <div class="zadacha-task">
+                                <div class="image">
+                                    <img src="./photo/galochka1.png" alt="Галочка">
+                                </div>
+                                <div class="formulirovka">
+                                    <p>лоаорпивлыиотвьвзшщепраоывысфьцуакгрщпуфвдыжщмукощсарьчфщдяотшщгкп
+                                        омтлстч\жлдрмтлят
+                                        лоаорпивлыиотвьвзшщепраоывысфьцуакгрщпуфвдыжщмукощсарьчфщдяотшщгкп
+                                        омтлстч\жлдрмтлят
+                                        лоаорпивлыиотвьвзшщепраоывысфьцуакгрщпуфвдыжщмукощсарьчфщдяотшщгкп
+                                        омтлстч\жлдрмтлят
+                                    </p>
+                                </div>
+                                <div class="info-for-zadacha">
+                                    <a id="level"><img src="./photo/icons8-календарь-100.png" alt="kalendar">
+                                        <p>Сложная задача</p>
+                                    </a>
+                                    <a id="data"><img src="./photo/icons8-календарь-100.png" alt="kalendar">
+                                        <p>25 августа</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Пример задачи -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Третье окно -->
+        <div class="window mx-2">
+
+            <div class="card">
+                <div class="card-body" id="card-body-third">
+                    <h2>Нужно сделать</h2>
+                    <div class="card-input-third">
+                        <!-- Пример задачи -->
+                        <div class="zadacha" draggable="true">
+
+                            <div class="zadacha-task">
+                                <div class="image">
+                                    <img src="./photo/galochka1.png" alt="Галочка">
+                                </div>
+                                <div class="formulirovka">
+                                    <p>Какой-то текст задачи...</p>
+                                    <!-- Всплывающее окно -->
+                                </div>
+                                <div class="info-for-zadacha">
+                                    <a id="level"><img src="./photo/icons8-календарь-100.png" alt="kalendar">
+                                        <p>Сложная задача</p>
+                                    </a>
+                                    <a id="data"><img src="./photo/icons8-календарь-100.png" alt="kalendar">
+                                        <p>25 августа</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Вторая задача -->
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Первый слайдбар (слева) -->
+        <div class="sidebar" id="sidebar-left">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Меню 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Меню 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Меню 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Меню 4</a>
+                </li>
+            </ul>
+            <!-- Кнопка для открытия слайдбара слева -->
+            <button class="sidebar-toggler" id="sidebarToggleLeft">☰</button>
+        </div>
+
+        <!-- Второй слайдбар (справа) -->
+        <div class="sidebar" id="sidebar-right">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Меню 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Меню 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Меню 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Меню 4</a>
+                </li>
+            </ul>
+            <!-- Кнопка для открытия слайдбара справа -->
+            <button class="sidebar-toggler" id="sidebarToggleRight">☰</button>
+        </div>
+
+        <!-- Затемняющий фон -->
+        <div class="overlay" id="overlay"></div>
+
+
+
+
+
+        <!--##########################################################
+    ##########################################################
+    ##########################################################-->
+
+        <!-- Модальное окно (Popup) -->
+        <div class="modal fade" id="zadachaModal" tabindex="-1" aria-labelledby="zadachaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="zadachaModalLabel">Описание задачи</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-icons">
+                            <img src="your-icon1.png" alt="Иконка 1" class="modal-icon">
+                            <img src="your-icon2.png" alt="Иконка 2" class="modal-icon">
+                        </div>
+                        <h6>Название задачи:</h6>
+                        <p id="modalZadachaTitle">Название задачи...</p>
+                        <h6>Описание:</h6>
+                        <div id="modalZadachaText" class="task-description">Текст задачи...</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!--Модальное окно-->
+        <script>
+            // Получаем все элементы с классом .zadacha
+            document.querySelectorAll('.zadacha').forEach(function (zadacha) {
+                zadacha.addEventListener('click', function () {
+                    // Получаем текст задачи
+                    const taskText = zadacha.querySelector('.formulirovka p').textContent;
+
+                    // Устанавливаем текст задачи в модальное окно
+                    document.getElementById('modalZadachaText').textContent = taskText;
+
+                    // Показываем модальное окно
+                    const modal = new bootstrap.Modal(document.getElementById('zadachaModal'));
+                    modal.show();
+                });
+            });
+        </script>
+
+
+
+
+        <script>
+            // Получаем все элементы с классом .zadacha
+            const zadachi = document.querySelectorAll('.zadacha');
+            const windows = document.querySelectorAll('.window'); // Все окна, куда можно перетащить задачу
+
+            // Функция для добавления обработчиков на задачи
+            function addDragEventsToTask(zadacha) {
+                zadacha.setAttribute('draggable', true); // Делаем задачу перетаскиваемой
+                zadacha.addEventListener('dragstart', function (e) {
+                    zadacha.classList.add('dragging'); // Добавляем класс для визуального эффекта
+                    e.dataTransfer.setData('text/plain', zadacha.innerHTML); // Сохраняем данные элемента
+                });
+
+                zadacha.addEventListener('dragend', function () {
+                    zadacha.classList.remove('dragging'); // Убираем класс после завершения перетаскивания
+                });
+            }
+
+            // Добавляем обработчики на все задачи сразу
+            zadachi.forEach(addDragEventsToTask);
+
+            // Обработчики событий для окон, куда можно перетащить задачу
+            windows.forEach(window => {
+                // Находим контейнеры для задач
+                const cardInputs = window.querySelectorAll('.card-input-first, .card-input-second, .card-input-third');
+
+                cardInputs.forEach(cardInput => {
+                    // Когда элемент перетаскивается в область
+                    cardInput.addEventListener('dragover', function (e) {
+                        e.preventDefault(); // Разрешаем отпускание элемента
+                        cardInput.classList.add('dragover'); // Добавляем стиль при наведении на область
+                    });
+
+                    // Когда элемент покидает область
+                    cardInput.addEventListener('dragleave', function () {
+                        cardInput.classList.remove('dragover'); // Убираем стиль при выходе из области
+                    });
+
+                    // Когда элемент сбрасывается в область
+                    cardInput.addEventListener('drop', function (e) {
+                        e.preventDefault();
+                        cardInput.classList.remove('dragover'); // Убираем стиль при отпускании
+
+                        // Получаем данные задачи
+                        const draggedZadachaHTML = e.dataTransfer.getData('text/plain');
+
+                        // Находим задачу, которая была перетащена
+                        const draggedZadacha = document.querySelector('.zadacha.dragging');
+
+                        // Убираем задачу из её текущего места (старого окна)
+                        draggedZadacha.remove();
+
+                        // Создаём новый элемент для новой задачи в новом месте
+                        const newZadacha = document.createElement('div');
+                        newZadacha.classList.add('zadacha');
+                        newZadacha.innerHTML = draggedZadachaHTML; // Вставляем содержимое задачи в новое место
+
+                        // Добавляем задачу в новое окно
+                        cardInput.appendChild(newZadacha);
+
+                        // Назначаем обработчики на новую задачу
+                        addDragEventsToTask(newZadacha); // Добавляем обработчики на вновь созданную задачу
+
+                        // Назначаем обработчик для открытия модального окна для новой задачи
+                        newZadacha.addEventListener('click', function () {
+                            const taskText = newZadacha.querySelector('.formulirovka p').textContent;
+                            document.getElementById('modalZadachaText').textContent = taskText;
+                            const modal = new bootstrap.Modal(document.getElementById('zadachaModal'));
+                            modal.show();
+                        });
+                    });
+                });
+            });
+
+        </script>
+
+
+
+
+
+
+
+
+
+        <script>
+            // Получаем элементы для левого слайдбара
+            const sidebarLeft = document.getElementById('sidebar-left');
+            const sidebarToggleLeft = document.getElementById('sidebarToggleLeft');
+
+            // Получаем элементы для правого слайдбара
+            const sidebarRight = document.getElementById('sidebar-right');
+            const sidebarToggleRight = document.getElementById('sidebarToggleRight');
+
+            const overlay = document.getElementById('overlay');
+            const body = document.body;
+
+            // Обработчик для кнопки открытия/закрытия левого слайдбара
+            sidebarToggleLeft.addEventListener('click', () => {
+                sidebarLeft.classList.toggle('active');  // Открыть/закрыть левый слайдбар
+                // Когда активен хотя бы один слайдбар, добавляем размытость
+                body.classList.toggle('active', sidebarLeft.classList.contains('active') || sidebarRight.classList.contains('active'));
+                overlay.style.display = sidebarLeft.classList.contains('active') ? 'block' : 'none';
+            });
+
+            // Обработчик для кнопки открытия/закрытия правого слайдбара
+            sidebarToggleRight.addEventListener('click', () => {
+                sidebarRight.classList.toggle('active');  // Открыть/закрыть правый слайдбар
+                // Когда активен хотя бы один слайдбар, добавляем размытость
+                body.classList.toggle('active', sidebarLeft.classList.contains('active') || sidebarRight.classList.contains('active'));
+                overlay.style.display = sidebarRight.classList.contains('active') ? 'block' : 'none';
+            });
+
+            // Обработчик для клика по затемняющему фону
+            overlay.addEventListener('click', () => {
+                sidebarLeft.classList.remove('active');
+                sidebarRight.classList.remove('active');
+                body.classList.remove('active');
+                overlay.style.display = 'none';
+            });
+
+        </script>
+
+
+
+
+
+        <script>('.zadacha-text').forEach(function (p) {
+                if (p.textContent.length > 46) {
+                    p.textContent = p.textContent.slice(0, 46) + '...';
+                }
+            });
+        </script>
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

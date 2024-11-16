@@ -1,0 +1,119 @@
+/* Стили для фона модального окна */
+.modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(20px); /* Увеличенная размытость фона */
+    -webkit-backdrop-filter: blur(20px); /* Для Safari */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1040; /* Чтобы фон был под модальным окном */
+}
+
+/* Стили для модального окна */
+.modal-dialog.modal-lg {
+    max-width: 60%; /* Устанавливаем максимальную ширину окна на 60% от ширины экрана */
+    width: 100%; /* Окно будет адаптивным */
+}
+
+/* Основные стили для содержимого модального окна */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.85); /* Полупрозрачный белый фон */
+    backdrop-filter: blur(20px); /* Применение увеличенной размытости фона */
+    -webkit-backdrop-filter: blur(20px); /* Для Safari */
+    border-radius: 15px; /* Закругленные углы */
+    padding: 20px; /* Отступы внутри */
+    position: relative;
+}
+
+/* Стили для заголовка */
+.modal-header {
+    display: flex;
+    justify-content: space-between; /* Распределяем элементы по краям */
+    align-items: center;
+    padding: 15px 25px; /* Отступы внутри */
+    background-color: rgba(0, 0, 0, 0.1); /* Легкий фон для заголовка */
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Стили для иконок */
+.modal-icons {
+    display: flex; /* Используем flexbox для выравнивания иконок */
+    gap: 15px; /* Расстояние между иконками */
+    align-items: center; /* Вертикальное выравнивание иконок */
+}
+
+.modal-icon {
+    width: 30px; /* Размер иконки */
+    height: 30px; /* Размер иконки */
+    cursor: pointer; /* Указатель, показывающий, что иконка кликабельна */
+    transition: transform 0.3s; /* Плавный эффект увеличения */
+}
+
+.modal-icon:hover {
+    transform: scale(1.2); /* Увеличиваем иконку при наведении */
+}
+
+/* Стили для текста внутри модального окна */
+.modal-body {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Стили для названия задачи */
+h6 {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Стили для описания задачи */
+.task-description {
+    background-color: #f9f9f9; /* Легкий фон для текста задачи */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для контента */
+    margin-top: 10px;
+}
+
+/* Стили для футера модального окна */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+.btn-secondary {
+    background-color: #5a5a5a;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 767px) {
+    .modal-dialog.modal-lg {
+        max-width: 90%; /* Окно будет занимать 90% ширины на мобильных устройствах */
+    }
+
+    .modal-icons {
+        gap: 10px; /* Уменьшаем расстояние между иконками на мобильных */
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .task-description {
+        font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
+    }
+}

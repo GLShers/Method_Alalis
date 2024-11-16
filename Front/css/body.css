@@ -1,0 +1,8 @@
+body {
+    background-image: url('./../photo/background_body.jpg');
+    background-size: cover; /* Изображение будет масштабироваться, чтобы покрыть весь экран */
+    background-position: center center; /* Изображение будет расположено по центру */
+    background-attachment: fixed; /* Фон будет фиксирован на месте при прокрутке */
+    background-repeat: no-repeat; /* Изображение не будет повторяться */
+  }
+
