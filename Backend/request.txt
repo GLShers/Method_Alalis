@@ -1,0 +1,12 @@
+{
+    "title": "exampl",
+    "description": "your_passwosdfsdfsdsrd",
+    "owner_user_id": 1
+}
+
+
+{
+    "login": "exampl",
+    "email": "your_passwosdfdfsdfsdsrd",
+    "password": "vfdvvdfdvfd"
+}
