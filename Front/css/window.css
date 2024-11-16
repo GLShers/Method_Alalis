@@ -1,0 +1,375 @@
+/* Основной контейнер для всех окон */
+.main-container {
+    height: 100vh;
+    /* Контейнер занимает всю высоту экрана */
+    display: flex;
+    /* Используем flexbox для выравнивания */
+    justify-content: space-between;
+    /* Равномерно распределяем окна по горизонтали */
+    align-items: flex-start;
+    /* Выравниваем окна по верхнему краю */
+    gap: 20px;
+    /* Добавляем промежутки между окнами */
+    padding: 20px;
+    /* Отступ от края контейнера */
+}
+
+/* Стили для каждого окошка (белого) */
+.window {
+    width: 30%;
+    /* Ширина окна 30% */
+    border-radius: 20px;
+    /* Закругленные углы для окошка */
+    display: flex;
+    /* Flexbox для выравнивания содержимого */
+    flex-direction: column;
+    /* Вложенные элементы будут выстраиваться вертикально */
+    overflow: hidden;
+    /* Чтобы не выходили элементы за края окна */
+
+}
+
+/* Стили для белой карточки (фон белый) */
+#card-body-first {
+    position: relative;
+    /* Белое окно не должно выходить за пределы контейнера */
+    width: 100%;
+    /* Карта должна заполнять всю ширину окна */
+    background: rgb(252, 252, 252);
+    background: linear-gradient(0deg, rgba(252, 252, 252, 0.08735994397759106) 0%, rgba(140, 238, 159, 1) 100%);
+    /* Белый фон для окна */
+    border-top-left-radius: 10px;
+    /* Закругленные углы верхних углов */
+    border-top-right-radius: 10px;
+    border: none;
+    /* Без бордера у окна */
+    display: flex;
+    /* Flexbox для выравнивания содержимого */
+    flex-direction: column;
+    /* Вложенные элементы будут выстраиваться вертикально */
+    height: 70vh;
+    /* Высота белого окна фиксирована */
+}
+
+
+/* Стили для белой карточки (фон белый) */
+#card-body-second {
+    position: relative;
+    /* Белое окно не должно выходить за пределы контейнера */
+    width: 100%;
+    /* Карта должна заполнять всю ширину окна */
+    background: rgb(252, 252, 252);
+    background: linear-gradient(0deg, rgba(252, 252, 252, 0.08735994397759106) 0%, rgba(140, 238, 159, 1) 100%);
+    /* Белый фон для окна */
+    border-top-left-radius: 10px;
+    /* Закругленные углы верхних углов */
+    border-top-right-radius: 10px;
+    border: none;
+    /* Без бордера у окна */
+    display: flex;
+    /* Flexbox для выравнивания содержимого */
+    flex-direction: column;
+    /* Вложенные элементы будут выстраиваться вертикально */
+    height: 70vh;
+    /* Высота белого окна фиксирована */
+}
+
+
+/* Стили для белой карточки (фон белый) */
+#card-body-third {
+    position: relative;
+    /* Белое окно не должно выходить за пределы контейнера */
+    width: 100%;
+    /* Карта должна заполнять всю ширину окна */
+    background: rgb(252, 252, 252);
+    background: linear-gradient(0deg, rgba(252, 252, 252, 0.08735994397759106) 0%, rgba(140, 238, 159, 1) 100%);
+    /* Белый фон для окна */
+    border-top-left-radius: 10px;
+    /* Закругленные углы верхних углов */
+    border-top-right-radius: 10px;
+    border: none;
+    /* Без бордера у окна */
+    display: flex;
+    /* Flexbox для выравнивания содержимого */
+    flex-direction: column;
+    /* Вложенные элементы будут выстраиваться вертикально */
+    height: 70vh;
+    /* Высота белого окна фиксирована */
+}
+
+/* Стили для желтого содержимого */
+.card-input-third {
+    background: rgb(252, 252, 252);
+    width: 100%;
+    /* Карта должна заполнять всю ширину */
+    border-radius: 20px;
+    /* Закругление углов */
+    box-sizing: border-box;
+    /* Чтобы отступы и границы не выходили за пределы карточки */
+    padding-top: 20px;
+    /* Отступ сверху внутри желтого блока */
+    padding-left: 20px;
+    /* Отступ слева */
+    padding-right: 20px;
+    /* Отступ справа */
+    padding-bottom: 10px;
+    /* Отступ снизу */
+    flex-grow: 1;
+    /* Заставляем блок с жёлтым фоном занимать доступное пространство */
+    overflow-y: auto;
+    /* Добавляем вертикальную прокрутку */
+    border-bottom-left-radius: 20px;
+    /* Закругляем нижние углы */
+    border-bottom-right-radius: 20px;
+    /* Закругляем нижние углы */
+}
+
+.card-input-first {
+    background: rgb(252, 238, 238);
+    
+    width: 100%;
+    /* Карта должна заполнять всю ширину */
+    border-radius: 20px;
+    /* Закругление углов */
+    box-sizing: border-box;
+    /* Чтобы отступы и границы не выходили за пределы карточки */
+    padding-top: 20px;
+    /* Отступ сверху внутри желтого блока */
+    padding-left: 20px;
+    /* Отступ слева */
+    padding-right: 20px;
+    /* Отступ справа */
+    padding-bottom: 10px;
+    /* Отступ снизу */
+    flex-grow: 1;
+    /* Заставляем блок с жёлтым фоном занимать доступное пространство */
+    overflow-y: auto;
+    /* Добавляем вертикальную прокрутку */
+    border-bottom-left-radius: 20px;
+    /* Закругляем нижние углы */
+    border-bottom-right-radius: 20px;
+    /* Закругляем нижние углы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавлена тень */
+}
+
+.card-input-second {
+    background: rgb(252,252,252);
+
+    width: 100%;
+    /* Карта должна заполнять всю ширину */
+    border-radius: 20px;
+    /* Закругление углов */
+    box-sizing: border-box;
+    /* Чтобы отступы и границы не выходили за пределы карточки */
+    padding-top: 20px;
+    /* Отступ сверху внутри желтого блока */
+    padding-left: 20px;
+    /* Отступ слева */
+    padding-right: 20px;
+    /* Отступ справа */
+    padding-bottom: 10px;
+    /* Отступ снизу */
+    flex-grow: 1;
+    /* Заставляем блок с жёлтым фоном занимать доступное пространство */
+    overflow-y: auto;
+    /* Добавляем вертикальную прокрутку */
+    border-bottom-left-radius: 20px;
+    /* Закругляем нижние углы */
+    border-bottom-right-radius: 20px;
+    /* Закругляем нижние углы */
+}
+
+/* Стили для задачи внутри желтого блока */
+/* Стили для задачи внутри желтого блока */
+.zadacha {
+    font-size: 12px;
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    /* Отступ между задачами */
+    position: relative;
+    /* Важно для правильного позиционирования подсказки */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    /* Плавная анимация для масштаба и тени */
+}
+
+/* Эффект при наведении */
+.zadacha:hover {
+    transform: scale(1.05);
+    /* Увеличиваем элемент на 5% */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Добавляем тень для выделения */
+}
+
+/* Стиль для выделения контейнера при перетаскивании */
+.card-input-first.dragover, .card-input-second.dragover, .card-input-third.dragover {
+    border: 2px dashed #4e9f3d; /* Разрешаем падение элемента с зелёным контуром */
+}
+
+
+/* Стили для перетаскиваемого элемента */
+.zadacha[draggable="true"] {
+    cursor: move; /* Показываем курсор "перетащить" */
+}
+
+/* При перетаскивании изменяем прозрачность */
+.zadacha.dragging {
+    opacity: 0.5; /* Полупрозрачность во время перетаскивания */
+}
+
+
+
+/* Стили для абзацев внутри .zadacha */
+.zadacha p {
+    margin: 0;
+    /* Убираем маргин, чтобы не было лишних отступов */
+    font-size: 12px;
+    /* Устанавливаем размер шрифта для текста */
+    white-space: nowrap;
+    /* Запрещаем перенос строк */
+    overflow: hidden;
+    /* Скрываем текст, который не помещается */
+    text-overflow: ellipsis;
+    /* Добавляем многоточие в случае обрезки текста */
+    width: 100%;
+    /* Текст будет занимать всю ширину контейнера */
+}
+
+/* Стили для кастомного скроллбара внутри .zadacha */
+.card-input::-webkit-scrollbar {
+    width: 8px;
+    /* Ширина скроллбара */
+    height: 8px;
+    /* Высота горизонтального скроллбара (если есть) */
+}
+
+/* Скроллбар ползунок */
+.card-input::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Цвет скроллбара */
+    border-radius: 10px;
+    /* Закругленные углы ползунка */
+    border: 2px solid transparent;
+    /* Обводка вокруг ползунка, для закругления */
+    background-clip: content-box;
+    /* Убираем цвет фона от бордера */
+}
+
+/* Эффект при наведении на ползунок */
+.card-input::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Цвет скроллбара при наведении */
+}
+
+/* Скрываем стрелки на скроллбаре */
+.card-input::-webkit-scrollbar-button {
+    display: none;
+    /* Убираем стрелки на скроллбаре */
+}
+
+/* Стили для трека скроллбара */
+.card-input::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Цвет трека (фона) скроллбара */
+    border-radius: 10px;
+    /* Закругленные углы трека */
+}
+
+/* Стили для трека скроллбара при наведении */
+.card-input::-webkit-scrollbar-track:hover {
+    background: #ddd;
+    /* Цвет трека при наведении */
+}
+
+/* Стили для изображения внутри .zadacha */
+.zadacha img {
+    width: 20px;
+    align-self: flex-start;
+    /* Сместить изображение вверх */
+    margin-top: 0;
+    /* Убираем отступ сверху */
+}
+
+/* Стили для блока с информацией .info-for-zadacha */
+.info-for-zadacha {
+    display: flex;
+    /* Используем flexbox для выравнивания по горизонтали */
+    gap: 10px;
+    /* Расстояние между изображением и текстом */
+    margin-top: 10px;
+    /* Отступ сверху */
+    justify-content: flex-start;
+    /* Выравнивание по левому краю */
+    align-items: center;
+    /* Вертикальное выравнивание по центру */
+}
+
+/* Стили для изображения внутри .info-for-zadacha */
+.info-for-zadacha img {
+    width: 20px;
+    height: auto;
+    /* Сохраняем пропорции изображения */
+}
+
+/* Стили для текста внутри .info-for-zadacha */
+.info-for-zadacha p {
+    margin: 0;
+    /* Убираем маргин, чтобы не было лишних отступов */
+    font-size: 12px;
+    /* Устанавливаем размер шрифта для текста */
+}
+
+/* Стили для контейнера (например, <a>) вокруг картинки и текста */
+.info-for-zadacha a {
+    display: flex;
+    /* Выравниваем элементы по горизонтали */
+    align-items: center;
+    /* Выравниваем по центру по вертикали */
+    gap: 10px;
+    /* Отступ между картинкой и текстом */
+}
+
+/* Стили для элемента с id level */
+#level {
+    background-color: rgb(18, 110, 239);
+    /* Устанавливаем фон */
+    border-radius: 5px;
+    /* Скругляем углы фона */
+    padding: 5px;
+    /* Добавляем немного отступа внутри изображения */
+}
+
+/* Стили для элемента с id data */
+#data {
+    background-color: rgb(74, 84, 97);
+    /* Устанавливаем фон */
+    border-radius: 5px;
+    /* Скругляем углы фона */
+    padding: 5px;
+    /* Добавляем немного отступа внутри изображения */
+}
+
+/* Для кастомного скроллбара по всему сайту (опционально) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}

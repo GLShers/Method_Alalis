@@ -1,22 +1,32 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Table
-from database import metadata
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
+from database import Model
+
+class User(Model):
+
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True)
+    login = Column(String, unique=True, index=True)
+    email = Column(String, unique=True, index=True)
+    password = Column(String)
+    company= Column(Integer, default=None)
+    my_company= Column(Integer, default=None)
+    
+    
 
 
-users = Table(
-    "users",
-    metadata,
-    Column("id", Integer, primary_key=True),
-    Column("email", String, unique=True, index=True),
-    Column("hashed_password", String),
-    Column("is_active", Boolean, default=True)
-)
+    # Определяем связь с компаниями
+
+    companies = relationship("Company", back_populates="owner_user")
 
 
-items = Table(
-    "items",
-    metadata,
-    Column("id", Integer, primary_key=True),
-    Column("title", String, index=True),
-    Column("description", String),
-    Column("owner_id", Integer, ForeignKey("users.id"))
-)
+class Company(Model):
+
+    __tablename__ = "company"
+    id = Column(Integer, primary_key=True)
+    title = Column(String, unique=True, index=True)
+    description = Column(String)
+    owner_user_id = Column(Integer, ForeignKey("users.id"))
+    # Определяем обратную связь с пользователем
+
+    owner_user = relationship("User", back_populates="companies")

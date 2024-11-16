@@ -1,15 +1,21 @@
-import databases
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
+from sqlalchemy.orm import  DeclarativeBase
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
-#SQLALCHEMY_DATABASE_URL = "postgresql://postgres:rawqer22@localhost/mydb"
+DATABASE_URL = "sqlite+aiosqlite:///./sql_app.db"  # Используйте aiosqlite для асинхронного SQLite
 
-database = databases.Database(SQLALCHEMY_DATABASE_URL)#представляет собой подключение к базе данных. Этот объект будет использоваться для выполнения асинхронных операций
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
-)
+# Создание асинхронного движка
+async_engine = create_async_engine(DATABASE_URL, echo=True)
 
-metadata = MetaData()
+# Создание асинхронной сессии
+new_session = async_sessionmaker(async_engine, expire_on_commit=False)
 
+class Model(DeclarativeBase):
+    pass
 
+async def create_tables():
+    async with async_engine.begin() as conn:
+        await conn.run_sync(Model.metadata.create_all)
 
+async def delete_tables():
+    async with async_engine.begin() as conn:
+        await conn.run_sync(Model.metadata.drop_all)

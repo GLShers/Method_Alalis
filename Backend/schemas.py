@@ -1,26 +1,16 @@
-from typing import List
+from typing import List, Optional
 from pydantic import BaseModel
 
 
-class ItemBase(BaseModel):
-    title: str
-    description: str = None
 
-
-class ItemCreate(ItemBase):
-    pass
-
-
-class Item(ItemBase):
-    id: int
-    owner_id: int
-
-    class Config:
-        orm_mode = True
-
-
-
-
+class CompanyCreate(BaseModel):
+        
+        title: str
+        description: str
+        owner_user_id: int  # ID владельца компании
+class CompanyGet(CompanyCreate):
+        id:int
+        
 
 class UserBase(BaseModel):
     email: str
@@ -28,30 +18,15 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: str
-    is_active: bool = True
-
+    login: str
+    company:Optional[int] = None 
+    my_company:Optional[int] = None 
     class Config:
         orm_mode = True
-
-
-class UserInDB(UserBase):
-    id: int
-
-    class Config:
-        orm_mode = True
-
 
 class User(UserBase):
     id: int
-    items: List[Item] = []
-
-    class Config:
-        orm_mode = True
-
-
-class ItemUser(ItemBase):
-    id: int
-    owner: UserInDB
+    
 
     class Config:
         orm_mode = True

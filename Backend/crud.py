@@ -1,44 +1,40 @@
-from database import database
-from models import users, items
+from models import User, Company
 import schemas
+from fastapi import HTTPException
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
-async def get_user(user_id: int):
-    user = dict(await database.fetch_one(users.select().where(users.c.id == user_id)))
-    list_item = await database.fetch_all(items.select().where(items.c.owner_id == user["id"]))
-    user.update({"items": [dict(result) for result in list_item]})
-    return user
+async def get_user_by_email(email: str, session: AsyncSession):
+    query = select(User).where(User.email == email)
+    result = await session.execute(query)
+    return result.scalars().first()
 
+async def create_user(user: schemas.UserCreate, session: AsyncSession):
+    db_user = User(
+        email=user.email,
+        password=user.password,
+        login=user.login
+    )
+    session.add(db_user)  # Добавляем пользователя в сессию
+    await session.commit()  # Коммитим изменения
+    await session.refresh(db_user)  # Обновляем объект, чтобы получить его ID
+    return schemas.User(**user.model_dump(), id=db_user.id)
 
-async def get_user_by_email(email: str):
-    return await database.fetch_one(users.select().where(users.c.email == email))
+async def create_company(company: schemas.CompanyCreate, session: AsyncSession):
+    db_company = Company(
+        title=company.title,
+        description=company.description,
+        owner_user_id=company.owner_user_id
+    )
+    session.add(db_company)  # Добавляем компанию в сессию
+    await session.commit()  # Коммитим изменения
+    await session.refresh(db_company)  # Обновляем объект, чтобы получить его ID
+    return schemas.CompanyGet(**company.model_dump(), id=db_company.id)
 
+async def get_company_by_title(title_a: str, session: AsyncSession):
 
-async def get_users(skip: int = 0, limit: int = 100):
-    results = await database.fetch_all(users.select().offset(skip).limit(limit))
-    return [dict(result) for result in results]
-
-
-async def create_user(user: schemas.UserCreate):
-    fake_hashed_password = user.password + "notreallyhashed"
-    db_user = users.insert().values(email=user.email, hashed_password=fake_hashed_password)
-    user_id = await database.execute(db_user)
-    return schemas.User(**user.dict(), id=user_id)
-
-
-async def get_items(skip: int = 0, limit: int = 100):
-    query = items.select().offset(skip).limit(limit)
-    results = await database.fetch_all(query)
-    return [dict(result) for result in results]
-
-
-async def get_item_user(pk: int):
-    item = dict(await database.fetch_one(items.select().where(items.c.id == pk)))
-    user = dict(await database.fetch_one(users.select().where(users.c.id == item["owner_id"])))
-    item.update({"owner": user})
-    return item
-
-
-async def create_user_item(item: schemas.ItemCreate, user_id: int):
-    query = items.insert().values(**item.dict(), owner_id=user_id)
-    item_id = await database.execute(query)
-    return schemas.Item(**item.dict(), id=item_id, owner_id=user_id)
+    result = await session.execute(select(Company).where(Company.title == title_a))  # Выполнение запроса
+    company = result.scalars().first()  # Извлечение первой найденной компании
+    if company:  # Если компания найдена
+        raise HTTPException(status_code=409, detail=f"Компания с названием '{title_a}' уже существует.")
+    return None  # Если компания не найдена, возвращаем None
