@@ -309,20 +309,25 @@
 	<div class="container" id="container">
 
 
-		<div class="container" id="container">
-			<div class="form-container sign-up-container">
+		<div class="form-container sign-up-container">
 
-				<form id="signupForm">
-
-					<h1>Регистрация</h1>
-					<input type="text" id="login" placeholder="Имя" required />
-					<input type="email" id="email" placeholder="Электронная почта" required />
-					<input type="password" id="password" placeholder="Пароль" required />
-					<button type="submit" class="buttonR">Регистрация</button>
-
-				</form>
-
-			</div>
+			<form id="signupForm">
+		
+				<h1>Регистрация</h1>
+		
+				
+		
+				<input type="text" id="name" placeholder="Имя" required />
+		
+				<input type="email" id="email" placeholder="Электронная почта" required />
+		
+				<input type="password" id="password" placeholder="Пароль" required />
+		
+				<button type="submit" class="buttonR">Регистрация</button>
+		
+			</form>
+		
+		</div>
 			<div class="form-container sign-in-container">
 				<form action="#">
 					<h1>Вход</h1>
@@ -387,7 +392,7 @@
 				// Создаем объект данных для отправки
 
 				const data = {
-					name: name,
+					login: name,
 					email: email,
 					password: password
 
