@@ -17,10 +17,6 @@ async def lifespan(app:FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-
-
-
-
 @app.post("/users/", response_model=schemas.User)
 async def create_user(user: schemas.UserCreate):
 
