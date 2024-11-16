@@ -16,7 +16,7 @@
     <!--Навбар-->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">RoleRelay</a>
+            <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -34,15 +34,18 @@
     </nav>
 
 
+    <!-- Форма с рамкой -->
     <div class="form-container">
         <h5>Информация о задаче</h5>
-    
+
+        <!-- Название задачи -->
         <div class="mb-3" style="text-align: left;">
             <p>Название задачи:</p>
             <input type="text" class="form-control" id="fileNameInput" placeholder="Введите название задачи"
                 aria-label="Название задачи">
         </div>
-    
+
+        <!-- Time line -->
         <div class="mb-3" style="text-align: left;">
             <p>Time line:</p>
             <div class="datetime-container">
@@ -50,13 +53,13 @@
                 <input type="time" class="form-control" id="timeInput" aria-label="Выбор времени">
             </div>
         </div>
-    
-        <!-- Строка с двумя выпадающими списками -->
-        <div class="row mb-3">
-            <!-- Левый блок: "Кому ставится задача" -->
+
+        <!-- Кому ставится задача и заказчик (два блока рядом) -->
+        <div class="mb-3 row" style="text-align: left;">
             <div class="col">
-                <label for="userInput" class="form-label">Кому ставится задача:</label>
-                <input type="text" class="form-control" id="userInput" placeholder="Введите пользователя" aria-label="Пользователь" list="usersList">
+                <label for="userInput" class="form-label"><p>Кому ставится задача:</p></label>
+                <input type="text" class="form-control" id="userInput" placeholder="Введите пользователя"
+                    aria-label="Пользователь" list="usersList">
                 <datalist id="usersList">
                     <option value="Петр Иванов">
                     <option value="Ирина Смирнова">
@@ -65,21 +68,42 @@
                     <option value="Дмитрий Волков">
                 </datalist>
             </div>
-    
-            <!-- Правый блок: "Заказчик" -->
+
             <div class="col">
-                <label for="clientInput" class="form-label">Заказчик:</label>
-                <input type="text" class="form-control" id="clientInput" placeholder="Введите заказчика" aria-label="Заказчик" list="clientsList">
+                <label for="clientInput" class="form-label"><p>Заказчик:</p></label>
+                <input type="text" class="form-control" id="clientInput" placeholder="Введите заказчика"
+                    aria-label="Заказчик" list="clientsList">
                 <datalist id="clientsList">
-                    <option value="ООО 'Рога и копыта'">
-                    <option value="ИП 'Лариса Петровна'">
-                    <option value="ЗАО 'Северный ветер'">
-                    <option value="ООО 'ТехноСтрой'">
-                    <option value="Частный клиент Александр">
+                    <option value="ООО «ТехСервис»">
+                    <option value="ООО «МегаСтрой»">
+                    <option value="ИП «Васильев»">
+                    <option value="ООО «Инновации»">
+                    <option value="ООО «ЭкоПроект»">
                 </datalist>
             </div>
         </div>
-    
+
+        <!-- Стек технологий -->
+        <!-- Новый блок "Стек технологий" с возможностью выбора нескольких вариантов -->
+        <div class="mb-3" style="text-align: left;">
+            <label for="techStackInput" class="form-label"><p>Стек технологий:</p></label>
+            <input type="text" class="form-control" id="techStackInput" placeholder="Выберите технологии"
+                aria-label="Стек технологий" list="techStackList">
+            <datalist id="techStackList">
+                <option value="JavaScript">
+                <option value="Python">
+                <option value="Java">
+                <option value="C#">
+                <option value="Ruby">
+                <option value="PHP">
+                <option value="Node.js">
+                <option value="React">
+                <option value="Angular">
+                <option value="Vue.js">
+            </datalist>
+        </div>
+
+        <!-- Описание задачи -->
         <div class="mb-3" style="text-align: left;">
             <p>Описание задачи:</p>
             <div style="position: relative;">
@@ -87,29 +111,38 @@
                     aria-label="Описание задачи" style="resize: none;"></textarea>
                 <button type="button" class="btn"
                     style="position: absolute; right: 10px; bottom: 10px; background: transparent; border: none; padding: 0;">
-                    <img src="img/attach_9969781.png" alt="Icon">
                 </button>
             </div>
         </div>
-    
+
+        <!-- Кнопки -->
         <div class="mb-3 text-center">
             <button type="button" class="btn btn-secondary" onclick="clearForm()">Очистить</button>
             <button type="button" class="btn btn-primary" id="createFileBtn">Создать</button>
         </div>
     </div>
-    
+
+    <!-- Скрипт для очистки формы -->
     <script>
-        // Функция для очистки формы (если нужно)
         function clearForm() {
             document.getElementById("fileNameInput").value = "";
             document.getElementById("dateInput").value = "";
             document.getElementById("timeInput").value = "";
             document.getElementById("userInput").value = "";
             document.getElementById("clientInput").value = "";
+            document.getElementById("techStackInput").value = "";
             document.querySelector("textarea").value = "";
         }
+
+        // Инициализация Select2 для "Стек технологий"
+        $(document).ready(function () {
+            $('#techStackInput').select2({
+                placeholder: "Выберите стек технологий",
+                allowClear: true
+            });
+        });
     </script>
-    
+
 
 
 
