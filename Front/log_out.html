@@ -6,7 +6,7 @@
 	<title>CodePen - A Pen by Mohithpoojary</title>
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
-	<link rel="stylesheet" href="css/style-logout.css">
+	
 
 </head>
 <style>
@@ -17,7 +17,7 @@
 }
 
 body {
-	background-image: url('вход.jpg'); /* Устанавливаем начальный фон */
+	background-image: url('./photo/entrance.jpg'); /* Устанавливаем начальный фон */
 	background-size: cover; /* Заполняем весь экран */
 	background-position: center; /* Центрируем изображение */
 	display: flex;
@@ -272,7 +272,7 @@ footer a {
     text-decoration: none;
 }
 .background {
-		background-image: url('вход.jpg'); /* Укажите пуь к ваему изображению фона */
+		background-image: url('./photo/entrance.jpg'); /* Укажите пуь к ваему изображению фона */
 		background-size: cover;
 		background-position: center;
 		transition: background-image 0.6s ease-in-out; /* Плавный переход при смене фона */
@@ -291,7 +291,7 @@ footer a {
 </style>
 
 <body> <!-- Убираем класс фона из body -->
-	<img src="вход.png" class="logo" alt="Логотип"> <!-- Добавляем логотип -->
+	<img src="./photo/logo.png" class="logo" alt="Логотип"> <!-- Добавляем логотип -->
 
 	<div class="container" id="container">
 
@@ -342,14 +342,14 @@ footer a {
 
 		signUpButton.addEventListener('click', () => {
 			container.classList.add("right-panel-active");
-			logo.src = 'регистрация.png'; // Меняем логотип при регистрации
-			body.style.backgroundImage = "url('регистрация.jpg')"; // Меняем фон при регистрации
+			logo.src = '/photo/registration_two.png'; // Меняем логотип при регистрации
+			body.style.backgroundImage = "url('/photo/regestration_one.jpg')"; // Меняем фон при регистрации
 		});
 
 		signInButton.addEventListener('click', () => {
 			container.classList.remove("right-panel-active");
 			logo.src = 'вход.png'; // Меняем логотип при входе
-			body.style.backgroundImage = "url('вход.jpg')"; // Меняем фон при входе
+			body.style.backgroundImage = "url('/photo/entrance.jpg')"; // Меняем фон при входе
 		});
 	</script>
 </body>
