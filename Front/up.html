@@ -43,7 +43,7 @@
 
     <div class="preloader" id="preloader">
         <video autoplay muted loop>
-            <source src="video.mp4" type="video/mp4"> <!-- Укажите путь к вашему видео -->
+            <source src="./video.mp4" type="video/mp4"> <!-- Укажите путь к вашему видео -->
             Ваш браузер не поддерживает видео.
         </video>
     </div>
@@ -61,7 +61,7 @@
             // Задержка перед скрытием прелоадера и перенаправлением
             setTimeout(() => {
                 preloader.style.display = 'none'; // Скрыть прелоадер
-                window.location.href = 'log_out.html'; // Перенаправление на страницу регистрации
+                window.location.href = 'http://localhost:8000/sign_up'; // Перенаправление на страницу регистрации; // Перенаправление на страницу регистрации
             }, 5000); // Задержка в 10 секунд (10000 миллисекунд)
         };
     </script>

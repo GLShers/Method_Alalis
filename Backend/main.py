@@ -4,7 +4,7 @@ from pathlib import Path
 
 from typing import List
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse 
+from fastapi.responses import HTMLResponse, RedirectResponse
 from database import async_engine, create_tables, delete_tables, new_session
 from contextlib import asynccontextmanager
 
@@ -35,11 +35,12 @@ app.mount("/log_out.html", StaticFiles(directory=templates_dir), name="log_out")
 app.mount("/favicon.ico", StaticFiles(directory=templates_dir), name="favicon")  # Для favicon
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/sign_up", response_class=HTMLResponse)
 
 async def read_index(request: Request):
 
     return templates.TemplateResponse("log_out.html", {"request": request})
+  
 
 
 app.include_router(user_router, prefix="/users", tags=["users"])
