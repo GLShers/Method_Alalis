@@ -11,10 +11,8 @@ class User(Model):
     password = Column(String)
     company= Column(Integer, default=None)
     my_company= Column(Integer, default=None)
-    
-    
+    role=Column(String, default=None)
+    role_id = Column(Integer, ForeignKey('roles.id'))  # Внешний ключ на таблицу roles
 
-
-    # Определяем связь с компаниями
-
+    role = relationship("Role", back_populates="users")
     companies = relationship("Company", back_populates="owner_user")

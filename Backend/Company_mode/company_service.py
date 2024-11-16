@@ -15,10 +15,4 @@ async def create_company(company: schemas.CompanyCreate, session: AsyncSession):
     await session.refresh(db_company)  # Обновляем объект, чтобы получить его ID
     return schemas.CompanyGet(**company.model_dump(), id=db_company.id)
 
-async def get_company_by_title(title_a: str, session: AsyncSession):
 
-    result = await session.execute(select(Company).where(Company.title == title_a))  # Выполнение запроса
-    company = result.scalars().first()  # Извлечение первой найденной компании
-    if company:  # Если компания найдена
-        raise HTTPException(status_code=409, detail=f"Компания с названием '{title_a}' уже существует.")
-    return None  # Если компания не найдена, возвращаем None
