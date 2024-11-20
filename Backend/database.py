@@ -1,8 +1,12 @@
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 from sqlalchemy import Column, Integer, String, Float
+from dotenv import load_dotenv #
+import os #для работы с переменными окружения
+load_dotenv()
 
-DATABASE_URL = "postgresql+asyncpg://postgres:rawqer22@localhost:5432/mydb"
+
+DATABASE_URL =os.getenv('DATABASE_URL')
 
 # Создание асинхронного движка
 async_engine = create_async_engine(DATABASE_URL, echo=True)
