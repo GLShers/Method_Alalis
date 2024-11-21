@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends
+""" from fastapi import APIRouter, HTTPException, Depends
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -24,3 +24,4 @@ async def create_company(company: company_schemas.CompanyCreate):
 
         # Возвращаем созданную компанию, преобразованную в схему
         return company_schemas.CompanyGet(**created_company.model_dump())
+ """

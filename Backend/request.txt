@@ -6,13 +6,18 @@
 
 
 {
-    "login": "exampl",
-    "email": "your_passwosdfdfsdfsdsrd",
-    "password": "vfdvvdfdvfd"
+    "password": "vfdvвыvdfdvfd",
+    "login": "examвыpl",
+    "company": 62
 }
 
 {
     "title": "exampl",
     "description": "your_passwosdfsdfsdsrd"
     
+}
+
+{
+    "title": "Admin",
+    "description": "Администратор"
 }

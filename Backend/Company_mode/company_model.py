@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+""" from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 from database import Model
 
@@ -13,3 +13,4 @@ class Company(Model):
     # Определяем обратную связь с пользователем
 
     owner_user = relationship("User", back_populates="companies")
+ """

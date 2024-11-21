@@ -1,4 +1,4 @@
-from Company_mode.company_model import Company
+""" from Company_mode.company_model import Company
 import User_mode.user_schemas as schemas
 from fastapi import HTTPException
 from sqlalchemy import select
@@ -16,3 +16,4 @@ async def create_company(company: schemas.CompanyCreate, session: AsyncSession):
     return schemas.CompanyGet(**company.model_dump(), id=db_company.id)
 
 
+ """
