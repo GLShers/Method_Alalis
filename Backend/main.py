@@ -9,7 +9,6 @@ from Role_mode.role_router import router as role_router
 
 
 
-
 #----------------of-static--------------------------------
 @asynccontextmanager
 async def lifespan(app:FastAPI):
