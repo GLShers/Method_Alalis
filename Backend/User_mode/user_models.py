@@ -12,4 +12,4 @@ class User(Model):
     role_id = Column(Integer, ForeignKey('roles.id'))  # Внешний ключ на таблицу roles
 
     role = relationship("Role", back_populates="users") #"Role": Это имя класса, с которым устанавливается связь.
-   
+    task = relationship("Task", back_populates="owner_user")
