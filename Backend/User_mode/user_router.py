@@ -18,12 +18,10 @@ async def create_user(user: user_schemas.UserCreate):
         return await user_service.create_user(user=user, session=session) 
     
     
-    
-""" @router.post("/", response_model=user_schemas.GetUser)
-async def get_user(user: user_schemas.GetUser):
-
-    async with new_session() as session:  # Создаем сессию
-
-        return await user_service.get_user(user=user, session=session) 
-    
- """
+@router.get("/{id}", response_model=user_schemas.UserResponse)
+async def get_user(id: int):
+    async with new_session() as session:  # Создаём сессию
+        user = await user_service.get_user(id=id, session=session)
+        if not user:
+            raise HTTPException(status_code=404, detail="User not found")
+        return user

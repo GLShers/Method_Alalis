@@ -11,8 +11,9 @@ async def create_task(task: schemas.TaskCreate, session: AsyncSession):
     
     db_task = Task(
         name_task=task.name_task,
-        descr_task=task.descr_task,
+        description_task=task.description_task,
         date=naive_date,
+        complexity= task.complexity,
         owner_user_id=task.owner_user_id
     )
     session.add(db_task)  # Добавляем компанию в сессию

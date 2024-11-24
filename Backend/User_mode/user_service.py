@@ -3,6 +3,7 @@ from User_mode.user_models import User
 import User_mode.user_schemas as schemas
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import joinedload
 
 """ async def get_user_by_email(email: str, session: AsyncSession):
     query = select(User).where(User.email == email)
@@ -23,7 +24,19 @@ async def create_user(user: schemas.UserCreate, session: AsyncSession):
     await session.refresh(db_user)  # Обновляем объект, чтобы получить его ID
     return schemas.GetUser(**user.model_dump(), id=db_user.id)
 
-async def get_user(user: schemas.GetUser , session: AsyncSession):
+async def get_user(id:int , session: AsyncSession):
+    query = (
+        select(User)
+        .options(joinedload(User.role), joinedload(User.task))  # Подгружаем связи
+        .where(User.id == id)
+    )
+    result = await session.execute(query)
+    user_obj = result.scalars().first()  # Получаем первого пользователя
+    return user_obj  # Возвращаем объект User
+
+
+""" async def get_user(user: schemas.GetUser , session: AsyncSession):
     query = select(User).where(User.login == user.login)
     result = await session.execute(query)
     return result.scalars().first() 
+ """

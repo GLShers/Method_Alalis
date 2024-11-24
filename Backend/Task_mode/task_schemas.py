@@ -6,8 +6,9 @@ from datetime import datetime
 class TaskCreate(BaseModel):
         
         name_task: str
-        descr_task: Optional[str]#необязательно
+        description_task: Optional[str]= None #необязательно
         date: datetime
+        complexity: int
         owner_user_id: int
         class Config:
                 orm_mode = True

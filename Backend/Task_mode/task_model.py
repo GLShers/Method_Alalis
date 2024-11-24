@@ -8,7 +8,8 @@ class Task(Model):
     __tablename__ = "tasks"
     id = Column(Integer, primary_key=True)
     name_task = Column(String, index=True)
-    descr_task = Column(String, default=None)
+    description_task = Column(String, default=None)
+    complexity= Column(Integer, index=True)
     date=Column(TIMESTAMP, index=True)
     state= Column(Integer, default=1, index=True)
     owner_user_id = Column(Integer, ForeignKey("users.id"))
