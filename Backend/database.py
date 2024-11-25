@@ -1,9 +1,8 @@
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy import Engine
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
 from dotenv import load_dotenv #
 import os #для работы с переменными окружения
-
-
 
 load_dotenv()
 DATABASE_URL =os.getenv('DATABASE_URL')
@@ -12,9 +11,14 @@ DATABASE_URL =os.getenv('DATABASE_URL')
 # Создание асинхронного движка
 async_engine = create_async_engine(DATABASE_URL, echo=True)
 # Создание асинхронной сессии
-new_session = async_sessionmaker(async_engine, expire_on_commit=False)
+AsyncSessionLocal = sessionmaker(bind=async_engine, class_=AsyncSession, expire_on_commit=False)
 
 
+async def get_db_session():
+
+    async with AsyncSessionLocal() as session:
+
+        yield session
 #определяем класс для создания моделей
 class Model(DeclarativeBase): 
     pass
