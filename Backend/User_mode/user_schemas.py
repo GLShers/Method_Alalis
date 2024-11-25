@@ -3,20 +3,21 @@ from pydantic import BaseModel
 from Role_mode.role_schemas import RoleGet
 
 
-
-class GetUser(BaseModel):
-    id: int
-
-    class Config:
-        orm_mode = True
-
-
 class UserCreate(BaseModel):
     password: str
     login: str
     company:int
     class Config:
         orm_mode = True
+        
+class GetUser(UserCreate):
+    id: int
+
+    class Config:
+        orm_mode = True
+
+
+
 
 class UserResponse(UserCreate):
     id:int
@@ -25,4 +26,13 @@ class UserResponse(UserCreate):
    
     class Config:
         orm_mode = True
+        
+        
+class Sign_in(BaseModel):
+    login:str
+    password:str
+    
+    class Config:
+        orm_mode = True
+
 

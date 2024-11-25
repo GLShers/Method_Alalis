@@ -25,3 +25,12 @@ async def get_user(id: int):
         if not user:
             raise HTTPException(status_code=404, detail="User not found")
         return user
+    
+@router.post("/sign_in", response_model=user_schemas.GetUser)
+async def sign_in(user:user_schemas.Sign_in):
+    async with new_session() as session:  # Создаём сессию
+        login=user.login
+        user = await user_service.sign_in(user, session=session)
+        if not user:
+            raise HTTPException(status_code=404, detail=f"Пользователь с логином '{login}' не существует.")
+        return user

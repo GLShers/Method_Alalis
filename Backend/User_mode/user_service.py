@@ -4,6 +4,7 @@ import User_mode.user_schemas as schemas
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import joinedload
+from fastapi  import HTTPException
 
 """ async def get_user_by_email(email: str, session: AsyncSession):
     query = select(User).where(User.email == email)
@@ -33,6 +34,19 @@ async def get_user(id:int , session: AsyncSession):
     result = await session.execute(query)
     user_obj = result.scalars().first()  # Получаем первого пользователя
     return user_obj  # Возвращаем объект User
+
+async def sign_in(user:schemas.Sign_in , session: AsyncSession):
+    login=user.login
+    password=user.password
+    query_login = (select(User).where(User.login == login))
+    query_password=(select(User).where(User.password==password))
+    result = await session.execute(query_login)
+    user_obj = result.scalars().first()  # Получаем первого пользователя
+    if user_obj:
+        if bcrypt.checkpw(password.encode('utf-8'), user_obj.password.encode('utf-8')):
+            return user_obj  # Возвращаем объект User
+        raise HTTPException(status_code=404, detail=f"Неверный пароль")
+    raise HTTPException(status_code=404, detail=f"Пользователь с логином '{login}' не существует.")
 
 
 """ async def get_user(user: schemas.GetUser , session: AsyncSession):
